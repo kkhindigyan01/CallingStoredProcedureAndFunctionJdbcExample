@@ -43,3 +43,28 @@ CALL getEmployeeById(20);
 CALL getEmployeeNameAndSalaryById(2,@empName,@empSal);
 SELECT @empName,@empSal;
 
+MySQL Custom Stored Fumction
+---------------------------------------------------------------------
+CREATE FUNCTION `sum_of_two_numbers` (n1 INT,n2 INT)
+RETURNS INTEGER
+BEGIN
+declare sum int;
+SET sum = n1+n2;
+RETURN sum;
+END
+
+Calling Stored Function
+-----------------------------------------------
+CREATE DEFINER=`root`@`localhost` FUNCTION `sum_of_two_numbers`(n1 INT,n2 INT) RETURNS int
+    DETERMINISTIC
+BEGIN
+	DECLARE sum INT;
+    SET sum =n1+n2;
+RETURN (sum);
+END
+
+Calling Stored function
+----------------------------------------------------------------------------
+select sum_of_two_numbers(5,500)
+
+

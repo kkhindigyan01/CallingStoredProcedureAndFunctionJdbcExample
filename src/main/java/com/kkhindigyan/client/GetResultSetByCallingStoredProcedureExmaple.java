@@ -3,8 +3,6 @@ package com.kkhindigyan.client;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.Types;
-import java.util.Scanner;
 
 import com.kkhindigyan.util.DBUtil;
 
